@@ -1,0 +1,75 @@
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// mixing
+@mixin resp($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+// fonts 
+@font-face {
+    font-family: 'Roboto-light';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+// color 
+$para: #404041;
+$border-color: #DFDFDF;
+$main__bg: #F3FAFE;
+
+
+// nav main wrapper 
+#nav__main__wrapper {
+    background-color: $main__bg;
+}
+
+// kart icon customization
+.kart__icon {
+    width: 40px;
+    height: 40px;
+    border-color: $border-color ;
+    @include resp ($lg) {
+        width: 50px;
+        height: 50px;
+    }
+    img {
+        width: 20px !important;
+        margin-top: -6px;
+    }
+}
+#navbarSupportedContent {
+    @include resp($lg) {
+        flex-basis: initial !important;
+        flex-grow: initial !important;
+    }
+    .nav-link {
+        font-size: 14px;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: 'Roboto-light';
+        color: $para;
+    }
+}
+.navbar-brand {
+    width: 75px;
+    @include resp($lg) {
+        // margin-left: -75px;
+    }
+    @include resp ($xl) {
+        width: 83px;
+    }
+    svg {
+        width: 100%;
+        margin-top: -10px;
+    }
+}
+
+
+// -------------------- nav complete -----------------
+
